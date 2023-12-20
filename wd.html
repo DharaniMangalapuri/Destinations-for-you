@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>website design</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="main">
+        <nav>
+            <div class="logo">
+              <img src="">
+            </div>
+            <div class="nav-links">
+              <ul>
+                  <li><a href="a">HOME</a></li>  
+                  <li class="services">
+                  <a href="#">Adventerous</a>
+                  <!--DROPDOWN MENU-->
+                  <ul class= "dropdown">
+                   <li><a href="/home/student/Desktop/my project/trek.pdf">trekking </a></li>
+                   <li><a href="/home/student/Desktop/my project/belum.pdf">belumcaves</a></li>
+                   <li><a href="/home/student/Desktop/my project/dan.pdf">dangerous</a></li>
+                    </ul>
+                   </li> 
+                  <li><a href="a">Beauty Spots</a></li> 
+                  <li><a href="a">Dinine Places</a></li> 
+              </ul> 
+            </div>
+        </nav> 
+         <div class="information">
+            <div class="overlay"></div>
+            <img src="" class="gang">
+                       <div id="circle">
+              <div class="feature one">
+                   <img src="pics/cold.png">
+                   <div>
+                    <h1>adventerous</h1>
+                    <p>trekking, mysterious caves,dangerous places</p>
+                   </div>
+              </div>  
+              <div class="feature two">
+                   <img src="pics/nat.jpg">
+                   <div>
+                    <h1>beauty spots </h1>
+                    <p>snow areas,hill stations,water falls</p>
+                   </div>
+              </div>
+              <div class="feature three">
+                   <img src="pics/temp.jpg">
+                   <div>
+                    <h1>divine places</h1>
+                    <p>temples</p>
+                   </div>
+              </div>     
+              <div class="feature four">
+                   <img src="pics/tra.jpg">
+                   <div>
+                    <h1>travel india</h1>
+                    <p>destinations for where u find your souls</p>
+                   </div>
+              </div>    
+            </div>
+          </div>  
+          <div class="controls">
+              <img src="pics/up.jpg" id="upBtn" >
+              <h3>click on</h3>
+              <img src="pics/dbutton.jpg" id="downBtn">          
+         </div>
+            
+   </div>
+   <script>
+     var circle = document.getElementById("circle");
+     var upBtn = document.getElementById("upBtn");
+     var downBtn= document.getElementById("downBtn");
+     var rotateValue = circle.style.transform;
+     var rotateSum;
+    
+     upBtn.onclick = function()
+     {
+         rotateSum = rotateValue + "rotate(-90deg)";
+         circle.style.transform = rotateSum;
+         rotateValue = rotateSum;
+     } 
+     downBtn.onclick = function()
+     {
+         rotateSum = rotateValue + "rotate(90deg)";
+         circle.style.transform = rotateSum;
+         rotateValue = rotateSum;
+     }   
+           
+         
+   </script>                   
+</body>       
+</html>

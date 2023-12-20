@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+     <meta http.equiv="X-UA-compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>details</title>
+     <link rel="stylesheet" href="style2.css">
+ 
+    
+</head>
+    <body>
+     <div class="hero">
+      <form action="login.php" id="form">
+      <div class="row">
+        <div class="input-group">
+         <input type="text" id="fname" required>
+         <label for="fname"><i class="fa-solid fa-user"></i> your fname:</label>
+       </div>
+       <div class="input-group">
+         <input type="text" id="lname" required>
+         <label for="lname"><i class="fa-solid fa-user"></i> your lname: </label>
+       </div>
+       </div>
+       <div class="input-group">
+         <input type="text" id="number" required>
+         <label for="number"><i class="fa-solid fa-phone"></i> ph no:</label>
+       </div>
+       <div class="input-group">
+          <input type="mail" id="email" required>
+         <label for="mail"><i class="fa-solid fa-envelope"></i>  message:</label>
+       </div>
+       <button type="submit">submit</button>
+       </form> 
+      
+</div>
+    <script>
+        let form=document.getElementById('form');
+
+        let uname=document.getElementById('name');
+        let utel=document.getElementById('number');
+        
+        let umail=document.getElementById('email');
+        let umess=document.getElementById('message');
+        
+
+        let uerror=document.getElementById('error');
+        let terror=document.getElementById('terror');
+       
+        let merror=document.getElementById('merror');
+        let msgerror=document.getElementById('msgerror');
+
+        form.addEventListener("submit",event=>{event.preventDefault();validate();})
+        function validate(){
+
+            let name=uname.value.trim();
+           
+           
+            let telph=utel.value.trim();
+            let em=umail.value.trim();
+
+            if(name===""||name==null){
+                uerror.innerText="cant be empty";
+            }
+             else if(name.length<3){
+                uerror.innerText="must be conatin 3 letters";
+                }
+           else if(!isNaN(name)){
+                uerror.innerText="only alphabets";
+            }
+           
+            else if(telph===""||telph==null){
+                terror.innerText="telphone cant be empty";
+            }
+            else if(!telph.match(/[6-9][0-9]{9}/)){
+                terror.innerText="invalid number";
+            }
+            else if(em===""||em==null){
+                merror.innerText="email cant be empty";
+            }
+            else if(!(em.match(/^[a-zA-Z0-9_/.-]+@[a-zA-Z0-9_-]+(?:\.[a-z]{2,6})$/))){
+                merror.innerText="invalid mail";
+            }
+          
+            else{
+       	        form.submit();
+       	    }
+        } 
+          
+    </script>
+    
+</body>
+</html>
